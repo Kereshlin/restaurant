@@ -1,0 +1,45 @@
+restaurant_app database business rules:
+
+CUSTOMER_TBL:
+
+1. CUSTOMER_ID is an field used to uniquely identify a customer.
+
+2. CUSTOMER_FIRST_NAME and CUSTOMER_SURNAME, cannot be null and each must be under 50 characters long
+
+3. CUSTOMER_PHONE_NUMBER must be 9 digits in length, must begin with a 0, cannot be null, and must be unique.
+
+STAFF_TBL:
+
+1. STAFF_ID is an field used to uniquely identify a customer.
+
+2. STAFF_FIRST_NAME and STAFF_SURNAME, cannot be null and each must be under 50 characters long
+
+3. STAFF_RATING is a derived field based on the average percentage of the CUSTOMERs ORDER_RATING of all ORDERs done by the STAFF memeber 
+
+RESTAURANT_TBL:
+
+1. RESTAURANT_NAME is a unique field and cannot be null.
+
+LOGIN_TBL:
+
+1. LOGIN_USERNAME is a unique field, must be prefixed with a letter either s or c, to indicate whether the user is a STAFF or CUSTOMER, must be under 50 characters long, and cannot be null.
+
+2. LOGIN_PASSWORD cannot be null, must be under 50 character, must be at least 8 characters, 1 special character, 1 uppercase and 1 lowercase character.
+
+
+ORDER_TBL:
+
+1. ORDER_TIME must contain both the date and time stamps and cannot be null.
+
+2. ORDER_STATUS can be either pending, ready or collected. This will be represented by a -1, 0 and 1 respectively. Cannot be null.
+
+3. ORDER_RATING, an order can be rated with a thumbs down, no rating or thumbs up. This will be represented by a -1, 0 and 1 respectively. Cannot be null.
+
+
+RELATIONSHIPS:
+
+1. ONE CUSTOMER or STAFF must have ONE login, a login must be assosiated with ONE STAFF or CUSTOMER.
+
+2. ONE RESTAURANT can have at least ONE or MANY STAFF. ONE STAFF can work for ONLY ONE RESTAURANT.
+
+3. ONE ORDER MUST be associated with ONE CUSTOMER and STAFF. ONE CUSTOMER MAY make an ORDER or MANY ORDERS. ONE STAFF MAY work on an ORDER or MANY ORDERS. 

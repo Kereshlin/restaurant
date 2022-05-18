@@ -14,6 +14,8 @@ STAFF_TBL:
 
 2. STAFF_FIRST_NAME and STAFF_SURNAME, cannot be null and each must be under 50 characters long
 
+2. STAFF_THUMBS_UP and STAFF_THUMBS_DOWN cannot be null, will both start at 0.
+
 3. STAFF_RATING is a derived field based on the average percentage of the CUSTOMERs ORDER_RATING of all ORDERs done by the STAFF memeber 
 
 RESTAURANT_TBL:
